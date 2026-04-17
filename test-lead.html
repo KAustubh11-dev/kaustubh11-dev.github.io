@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Villagio Lead</title>
+</head>
+<body>
+    <h1>Test Villagio Lead Submission</h1>
+    <button id="testBtn">Test Send Lead</button>
+    <pre id="output"></pre>
+    <script>
+        const GAS_URL = 'https://script.google.com/macros/s/AKfycbyyldMA9zOeIjYHJR9FaoIPEonXoz8uiMjbNzP7JOtSYwbLexoLuuhpefSYLV6WwzMb-Q/exec';
+        
+        document.getElementById('testBtn').addEventListener('click', async () => {
+            const output = document.getElementById('output');
+            const testData = {
+                action: 'submitLead',
+                data: {
+                    name: 'Test User',
+                    phone: '9876543210',
+                    email: 'test@example.com',
+                    looking_for: '4bhk',
+                    source_form: 'test',
+                    time_on_site: 30,
+                    clicks_before_conversion: 5,
+                    session_id: 'test_123',
+                    device_type: 'Desktop',
+                    os: 'Mac',
+                    browser: 'Chrome',
+                    city: 'Mumbai',
+                    location: 'Maharashtra',
+                    timezone: 'Asia/Kolkata'
+                }
+            };
+            
+            output.textContent = 'Sending...';
+            
+            try {
+                output.textContent = 'POST to: ' + GAS_URL + '\n\nData: ' + JSON.stringify(testData, null, 2);
+                
+                const response = await fetch(GAS_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(testData)
+                });
+                
+                output.textContent += '\n\nResponse: ' + JSON.stringify(response, null, 2);
+                output.textContent += '\n\nCheck your Google Sheet - Leads tab';
+            } catch (err) {
+                output.textContent += '\n\nError: ' + err.message;
+            }
+        });
+    </script>
+</body>
+</html>
