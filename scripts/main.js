@@ -816,15 +816,23 @@
     // Preloader
     const preloader = document.querySelector('.preloader');
     if (preloader) {
-      window.addEventListener('load', () => {
+      const hidePreloader = () => {
         const progress = preloader.querySelector('.preloader-progress');
         if (progress) {
           progress.style.width = '100%';
           setTimeout(() => {
             preloader.classList.add('hidden');
-          }, 500);
+          }, 400);
         }
-      });
+      };
+
+      if (document.readyState === 'complete') {
+        hidePreloader();
+      } else {
+        window.addEventListener('load', hidePreloader);
+        // Safety fallback: hide preloader after 2.5s anyway
+        setTimeout(hidePreloader, 2500);
+      }
     }
 
     // Scroll Reveal Animation
