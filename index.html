@@ -1,26 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Villagio | The Final Chapter of Villa Living</title>
-    <meta name="description" content="Villagio - Signature Edition Luxury Villas & Townhouses in Somatane, Pune.">
+    <title>SUPREME VILLAGIO | The Final Chapter of Villa Living</title>
+    <meta name="description"
+        content="SUPREME VILLAGIO - Signature Edition Luxury Villas & Townhouses in Somatane, Pune.">
+    <meta name="keywords" content="luxury villas, townhouses, real estate, Pune, residential, premium housing">
+    <meta name="author" content="SUPREME VILLAGIO">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            inset: 0;
+            background: #0F3D2E;
+            z-index: 10001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .preloader-logo {
+            font-family: 'Playfair Display', serif;
+
+            font-size: 2rem;
+            color: #FFFFFF;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .preloader-bar {
+            width: 200px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            margin-top: 20px;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .preloader-progress {
+            height: 100%;
+            background: #C8A96B;
+            width: 0;
+            transition: width 0.3s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .preloader.hidden {
+            animation: fadeOut 0.5s ease forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-logo">SUPREME VILLAGIO</div>
+        <div class="preloader-bar">
+            <div class="preloader-progress" style="width: 30%;"></div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" style="width: 0%;"></div>
     <header class="header header-transparent" id="header">
         <div class="container">
             <nav class="nav">
-                <a href="/" class="logo">Villagio</a>
+                <a href="/" class="logo">SUPREME VILLAGIO</a>
                 <div class="nav-right">
-                    <a href="tel:+918010473982" class="nav-phone">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        <span>8010473982</span>
-                    </a>
-                    <a href="#inquiry" class="btn btn-gold btn-sm">Book Site Visit</a>
+                    <!-- Liquid Magnetic Phone Reveal -->
+                    <div class="lmpr-wrapper" id="lmpr-nav" data-phone="+918010473982" data-display="+91 80104 73982">
+                        <p class="lmpr-lure"><span>Check real-time unit availability for 30:70 plan</span></p>
+                        <div class="lmpr-pill" id="lmpr-pill-nav">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span class="lmpr-label">Private Briefing</span>
+                            <span class="lmpr-number" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                    <div class="header-cta-wrapper">
+                        <p class="header-cta-lure"><span>Few units left under 30:70 Plan</span></p>
+                        <div class="lmpr-pill lmpr-pill-cta" onclick="showInquiryPopup()" role="button" tabindex="0">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <span class="lmpr-label">Book Site Visit</span>
+                        </div>
+                    </div>
                 </div>
                 <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
             </nav>
@@ -28,17 +116,38 @@
     </header>
 
     <div class="floating-whatsapp" id="floatingWhatsapp">
-        <a href="https://wa.me/918010473982?text=Hello%2C%20I%20am%20interested%20in%20Villagio." target="_blank" aria-label="Chat on WhatsApp">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <a href="https://wa.me/918010473982?text=Hello%2C%20I%20am%20interested%20in%20Supreme%20Villagio."
+            target="_blank" aria-label="Chat on WhatsApp">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
         </a>
     </div>
 
     <div class="sticky-inquiry" id="stickyInquiry">
-        <a href="#inquiry" class="btn btn-gold btn-full">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Enquire Now
-        </a>
+        <div class="sticky-hook-wrapper">
+            <span class="sticky-hook">✨ Premium Inventory Selling Fast</span>
+        </div>
+        <div style="display: flex; width: 100%; gap: 10px;">
+            <a href="javascript:void(0)" onclick="showInquiryPopup()" class="btn btn-gold call-now-pulse" style="flex: 1;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                Enquire Now
+            </a>
+            <a href="https://wa.me/918010473982?text=Hello%2C%20I%20am%20interested%20in%20Supreme%20Villagio."
+                target="_blank" aria-label="Chat on WhatsApp" class="btn btn-whatsapp" style="flex: 1; margin-top: 0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                WhatsApp
+            </a>
+        </div>
     </div>
+
 
     <main>
         <section class="hero" id="hero">
@@ -55,11 +164,14 @@
                     </div>
                     <div class="hero-form reveal" id="inquiry">
                         <div class="form-header">
-                            <span class="form-badge">Limited Residences</span>
-                            <h3>Request a Private Viewing</h3>
+                            <span class="form-badge" style="display: inline-block; margin-bottom: 8px;">🔥 High Demand:
+                                Unlock Exclusive Offers</span>
+                            <span class="form-badge">30:70 Payment Plan</span>
+                            <h3>Book Your Site Visit</h3>
                             <div class="gold-line"></div>
                         </div>
-                        <form class="inquiry-form lead-form" action="#" method="POST" data-redirect="whatsapp" data-form-id="hero">
+                        <form class="inquiry-form lead-form" action="#" method="POST" data-redirect="thankyou"
+                            data-form-id="hero">
                             <input type="hidden" name="utm_source" class="utm-field">
                             <input type="hidden" name="utm_medium" class="utm-field">
                             <input type="hidden" name="utm_campaign" class="utm-field">
@@ -76,35 +188,168 @@
                             <input type="hidden" name="clicks_before_conversion" class="utm-field">
                             <input type="hidden" name="session_id" class="utm-field">
                             <input type="hidden" name="source_form" value="hero">
-                            <input type="text" name="website_url" class="hp-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">
-                            <div class="form-group"><input type="text" name="name" placeholder="Full Name" required></div>
-                            <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>
+                            <input type="text" name="website_url" class="hp-field" tabindex="-1" autocomplete="off"
+                                style="position:absolute;left:-9999px">
+                            <div class="form-group"><input type="text" name="name" placeholder="Your Name"
+                                    autocomplete="name" aria-label="Your full name" required></div>
+                            <div class="form-group"><input type="email" name="email"
+                                    placeholder="Email Address (Optional)" autocomplete="email"
+                                    aria-label="Your email address"></div>
                             <div class="form-group phone-input-group">
                                 <select name="country_code" class="country-select">
-                                    <option value="+91" selected>+91 India</option>
-                                    <option value="+1">+1 USA</option>
-                                    <option value="+44">+44 UK</option>
-                                    <option value="+61">+61 Australia</option>
-                                    <option value="+971">+971 UAE</option>
-                                    <option value="+49">+49 Germany</option>
-                                    <option value="+33">+33 France</option>
-                                    <option value="+81">+81 Japan</option>
-                                    <option value="+86">+86 China</option>
-                                    <option value="+ Singapore">+65 Singapore</option>
+                                    <option value="+91" selected>+91</option>
+                                    <option value="+1">+1</option>
+                                    <option value="+44">+44</option>
+                                    <option value="+971">+971</option>
                                 </select>
-                                <input type="tel" name="phone" class="phone-field" placeholder="Phone Number" required>
-                            </div>
-                            <div class="form-group">
-                                <select name="looking_for" required>
-                                    <option value="" disabled selected>Looking For</option>
-                                    <option value="4bhk">4 BHK Villa</option>
-                                    <option value="5bhk">5 BHK Villa</option>
-                                    <option value="townhouse">Townhouse</option>
-                                    <option value="investment">Investment Purpose</option>
-                                </select>
+                                <input type="tel" name="phone" class="phone-field" placeholder="Phone Number"
+                                    autocomplete="tel" required>
                             </div>
                             <button type="submit" class="btn btn-gold btn-full">Schedule Site Visit</button>
+                            <p class="form-note"
+                                style="font-size: 0.75rem; color: var(--color-text-light); text-align: center; margin-top: 12px; opacity: 0.7;">
+                                We respect your privacy. No spam.</p>
                         </form>
+
+                        <!-- Trust Bar moved into Hero Form -->
+                        <div class="trust-bar hero-trust-bar"
+                            style="margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid rgba(0,0,0,0.1);">
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <div
+                                    style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 0.8125rem; color: var(--color-text);">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--color-gold)" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                    </svg>
+                                    <span><strong>MahaRERA</strong> Registered</span>
+                                </div>
+                                <div class="rera-display"
+                                    style="display: flex; justify-content: center; align-items: center; gap: 8px; padding: 8px; background: rgba(0,0,0,0.03); border-radius: 4px; font-size: 0.7rem; text-align: center;">
+                                    <span>Project: <strong
+                                            style="color: var(--color-gold-dark);">P52100055048</strong></span>
+                                    <span style="opacity: 0.4;">|</span>
+                                    <span>Partner: <strong
+                                            style="color: var(--color-gold-dark);">A51500043829</strong></span>
+                                </div>
+                                <div style="display: flex; justify-content: center; align-items: center; gap: 16px;">
+                                    <div
+                                        style="display: flex; align-items: center; gap: 6px; font-size: 0.8125rem; color: var(--color-text);">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="var(--color-gold)" stroke-width="2">
+                                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                                            <polyline points="22 4 12 14.01 9 11.01" />
+                                        </svg>
+                                        <span>100% Timely Delivery</span>
+                                    </div>
+                                    <div
+                                        style="display: flex; align-items: center; gap: 6px; font-size: 0.8125rem; color: var(--color-text);">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                            stroke="var(--color-gold)" stroke-width="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M12 6v6l4 2" />
+                                        </svg>
+                                        <span>Free Site Visit</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section offer-section" id="offer">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Current Offer</span>
+                    <h2 class="section-title">Exclusive <em>30:70</em> Payment Plan</h2>
+                    <div class="gold-line gold-line-center"></div>
+                    <!-- 3-Day Countdown Timer -->
+                    <div class="offer-countdown" id="offerCountdown">
+                        <p class="countdown-label">Offer Valid For</p>
+                        <div class="countdown-blocks">
+                            <div class="countdown-block">
+                                <span class="countdown-val" id="cd-days">00</span>
+                                <span class="countdown-unit">Days</span>
+                            </div>
+                            <span class="countdown-sep">:</span>
+                            <div class="countdown-block">
+                                <span class="countdown-val" id="cd-hours">00</span>
+                                <span class="countdown-unit">Hours</span>
+                            </div>
+                            <span class="countdown-sep">:</span>
+                            <div class="countdown-block">
+                                <span class="countdown-val" id="cd-mins">00</span>
+                                <span class="countdown-unit">Mins</span>
+                            </div>
+                            <span class="countdown-sep">:</span>
+                            <div class="countdown-block">
+                                <span class="countdown-val" id="cd-secs">00</span>
+                                <span class="countdown-unit">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="offer-wrapper reveal">
+                    <div class="offer-card">
+                        <div class="offer-badge">Limited Period</div>
+                        <div class="offer-plan">
+                            <div class="plan-step">
+                                <div class="plan-circle">
+                                    <span class="plan-percent">30%</span>
+                                </div>
+                                <h3>During Agreement</h3>
+                                <p>Pay just 30% at the time of agreement registration to secure your dream villa</p>
+                            </div>
+                            <div class="plan-connector">
+                                <svg width="48" height="24" viewBox="0 0 48 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M0 12h44M38 6l6 6-6 6" />
+                                </svg>
+                            </div>
+                            <div class="plan-step">
+                                <div class="plan-circle">
+                                    <span class="plan-percent">70%</span>
+                                </div>
+                                <h3>On Possession</h3>
+                                <p>Remaining 70% payable only at the time of possession — move in stress-free</p>
+                            </div>
+                        </div>
+                        <div class="offer-highlights">
+                            <div class="offer-highlight-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                <span>No Heavy EMIs During Construction</span>
+                            </div>
+                            <div class="offer-highlight-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                <span>61% Appreciation in 3 Years</span>
+                            </div>
+                            <div class="offer-highlight-item">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                                <span>MahaRERA Registered Project</span>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin: 1.5rem 0;">
+                            <span class="form-badge"
+                                style="background: var(--color-primary); font-size: 0.75rem; padding: 0.5rem 1rem;">Limited
+                                Units Available — Claim This Offer Now 👇</span>
+                        </div>
+                        <div class="offer-cta">
+                            <a href="javascript:void(0)" onclick="showInquiryPopup()" class="btn btn-gold btn-lg">Avail
+                                This Offer</a>
+                            <a href="tel:+918010473982" class="btn btn-outline-dark btn-lg call-now-pulse">Call to Know
+                                More</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -115,27 +360,44 @@
                 <div class="location-grid">
                     <div class="location-image reveal">
                         <img src="assets/images/Website/Location.jpeg" alt="Location">
-                        <div class="location-badge"><span class="badge-number">15</span><span class="badge-text">Min to Expressway</span></div>
+                        <div class="location-badge"><span class="badge-number">15</span><span class="badge-text">Min to
+                                Expressway</span></div>
                     </div>
                     <div class="location-content reveal">
                         <span class="section-label">Strategic Location</span>
                         <h2 class="section-title">Somatane Growth Corridor</h2>
                         <div class="gold-line"></div>
-                        <p class="location-lead">Pune's emerging luxury corridor with unmatched connectivity and appreciation potential.</p>
+                        <p class="location-lead">Pune's emerging luxury corridor with unmatched connectivity and
+                            appreciation potential.</p>
                         <div class="location-features">
                             <div class="feature-item">
-                                <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
-                                <div class="feature-text"><h4>Mumbai-Pune Expressway</h4><p>Seamless dual-city connectivity</p></div>
+                                <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.5">
+                                        <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                                    </svg></div>
+                                <div class="feature-text">
+                                    <h4>Mumbai-Pune Expressway</h4>
+                                    <p>Seamless dual-city connectivity</p>
+                                </div>
                             </div>
                             <div class="feature-item">
-                                <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg></div>
-                                <div class="feature-text"><h4>Ring Road Advantage</h4><p>Direct access to 125 km Ring Road</p></div>
+                                <div class="feature-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.5">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" />
+                                    </svg></div>
+                                <div class="feature-text">
+                                    <h4>Ring Road Advantage</h4>
+                                    <p>Direct access to 125 km Ring Road</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
 
         <section class="section section-dark">
             <div class="container">
@@ -146,28 +408,45 @@
                 </div>
                 <div class="investment-grid">
                     <article class="investment-card reveal">
-                        <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                        <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg></div>
                         <h3>Pune Ring Road</h3>
                         <p>Direct access to the 125 km Ring Road network.</p>
-                        <div class="card-stat"><span class="stat-value">2 km</span><span class="stat-label">To Nearest Exit</span></div>
+                        <div class="card-stat"><span class="stat-value">2 km</span><span class="stat-label">To Nearest
+                                Exit</span></div>
                     </article>
                     <article class="investment-card reveal">
-                        <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L2 22M17 2h5v5"/></svg></div>
+                        <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 2L2 22M17 2h5v5" />
+                            </svg></div>
                         <h3>Navi Mumbai Airport</h3>
                         <p>International connectivity nearby.</p>
-                        <div class="card-stat"><span class="stat-value">2 hour</span><span class="stat-label">Drive Time</span></div>
+                        <div class="card-stat"><span class="stat-value">2 hour</span><span class="stat-label">Drive
+                                Time</span></div>
                     </article>
                     <article class="investment-card reveal">
-                        <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg></div>
                         <h3>Lush Green Surroundings</h3>
                         <p>Serene nature trails and green buffers around the project.</p>
-                        <div class="card-stat"><span class="stat-value">80+</span><span class="stat-label">Acres Green Space</span></div>
+                        <div class="card-stat"><span class="stat-value">80+</span><span class="stat-label">Acres Green
+                                Space</span></div>
                     </article>
                     <article class="investment-card reveal">
-                        <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M5 20V8l7-5 7 5v12M9 20v-6h6v6"/></svg></div>
+                        <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path d="M2 20h20M5 20V8l7-5 7 5v12M9 20v-6h6v6" />
+                            </svg></div>
                         <h3>Infrastructure Growth</h3>
                         <p>IT parks and retail hubs developing rapidly.</p>
-                        <div class="card-stat"><span class="stat-value">15+</span><span class="stat-label">IT Parks Nearby</span></div>
+                        <div class="card-stat"><span class="stat-value">15+</span><span class="stat-label">IT Parks
+                                Nearby</span></div>
                     </article>
                 </div>
             </div>
@@ -181,19 +460,50 @@
                         <div class="project-accent"><img src="assets/images/Website/Interior.png" alt="Interior"></div>
                     </div>
                     <div class="project-content reveal">
-                        <span class="section-label">The Residence</span>
+                        <span class="section-label">The Residences</span>
                         <h2 class="project-title">Where Dreams Become <em>Addresses</em></h2>
                         <div class="gold-line"></div>
-                        <p class="project-lead">Exclusive 4 BHK & 5 BHK luxury villas with private gardens, expansive terraces, and premium horizontal living.</p>
+                        <p class="project-lead">Exclusive 4 BHK luxury villas and townhouses with private gardens,
+                            expansive terraces, and premium horizontal living.</p>
+                        <div class="project-types">
+                            <div class="project-type-card">
+                                <span class="type-label">JADE</span>
+                                <h4>4 BHK Twin Villas</h4>
+                                <span class="type-area">3,800+ Sq. Ft. Usable</span>
+                                <span class="type-price">&#8377; 3.69 Cr <em>onwards</em></span>
+                            </div>
+                            <div class="project-type-card">
+                                <span class="type-label">MINT</span>
+                                <h4>4 BHK Townhouses</h4>
+                                <span class="type-area">3,394+ Sq. Ft. Usable</span>
+                                <span class="type-price">&#8377; 2.69 Cr <em>onwards</em></span>
+                            </div>
+                        </div>
                         <div class="project-highlights">
-                            <div class="highlight-item"><span class="highlight-value">4-5</span><span class="highlight-label">Bedrooms</span></div>
-                            <div class="highlight-item"><span class="highlight-value">2800+</span><span class="highlight-label">Sq. Ft.</span></div>
-                            <div class="highlight-item"><span class="highlight-value">Private</span><span class="highlight-label">Gardens</span></div>
+                            <div class="highlight-item"><span class="highlight-value">4</span><span
+                                    class="highlight-label">Bedrooms</span></div>
+                            <div class="highlight-item"><span class="highlight-value">3400+</span><span
+                                    class="highlight-label">Sq. Ft.</span></div>
+                            <div class="highlight-item"><span class="highlight-value">65%</span><span
+                                    class="highlight-label">Open Space</span></div>
                         </div>
                         <ul class="project-features">
-                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Premium Horizontal Living</span></li>
-                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Private Gardens & Terraces</span></li>
-                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Lift Provision in Every Home</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg><span>Premium Horizontal Living</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg><span>Private Gardens & Terraces</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg><span>Walk-in Wardrobes & Maid's Room</span></li>
+                            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg><span>Modular Kitchen with Hob & Chimney</span></li>
                         </ul>
                     </div>
                 </div>
@@ -207,48 +517,29 @@
                         <span class="section-label light">Master Plan</span>
                         <h2 class="section-title light">Thoughtfully Designed Living Spaces</h2>
                         <div class="gold-line"></div>
-                        <p class="masterplan-text">Every aspect of Villagio has been carefully planned with lush green spaces, premium amenities, and intelligent architecture.</p>
+                        <p class="masterplan-text">Every aspect of Villagio has been carefully planned with lush green
+                            spaces, premium amenities, and intelligent architecture.</p>
                         <ul class="masterplan-features">
-                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>40% Open & Green Spaces</span></li>
-                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>Gated Community with 24/7 Security</span></li>
-                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg><span>EV Charging Stations</span></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg><span>40% Open & Green Spaces</span></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg><span>Gated Community with 24/7 Security</span></li>
+                            <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg><span>EV Charging Stations</span></li>
                         </ul>
-                        <a href="#inquiry" class="btn btn-gold">Request Master Plan</a>
+                        <a href="javascript:void(0)" onclick="showInquiryPopup()" class="btn btn-gold">Request Master Plan</a>
                     </div>
                     <div class="masterplan-visual reveal">
                         <img src="assets/images/Website/Master Plan.png" alt="Master Plan">
-                        <div class="masterplan-overlay"><a href="#inquiry" class="btn btn-white">View Full Master Plan</a></div>
+                        <div class="masterplan-overlay"><a href="javascript:void(0)" onclick="showInquiryPopup()"
+                                class="btn btn-white">View Full Master Plan</a></div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section amenities-section">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label">World-Class</span>
-                    <h2 class="section-title">Club Villagio Amenities</h2>
-                    <div class="gold-line gold-line-center"></div>
-                </div>
-                <div class="amenity-block reveal">
-                    <div class="amenity-content">
-                        <span class="amenity-number">01</span>
-                        <h3 class="amenity-title">Grand Clubhouse</h3>
-                        <div class="gold-line"></div>
-                        <p class="amenity-text">Double-height entrance lobby, banquet hall, mini theatre, and elegant lounge areas.</p>
-                        <ul class="amenity-list"><li>Double Height Lobby</li><li>Banquet Hall</li><li>Mini Theatre</li><li>Café & Lounge</li></ul>
-                    </div>
-                    <div class="amenity-visual"><img src="assets/images/Website/Club House.jpg" alt="Clubhouse"></div>
-                </div>
-                <div class="amenity-block amenity-reverse reveal">
-                    <div class="amenity-content">
-                        <span class="amenity-number">02</span>
-                        <h3 class="amenity-title">Resort-Style Pool</h3>
-                        <div class="gold-line"></div>
-                        <p class="amenity-text">Temperature-controlled lap pool, kids splash pool, and sun-drenched pool deck.</p>
-                        <ul class="amenity-list"><li>Lap Pool</li><li>Kids Splash Pool</li><li>Pool Basking Deck</li><li>Party Lawn</li></ul>
-                    </div>
-                    <div class="amenity-visual"><img src="assets/images/Website/Pool.jpg" alt="Pool"></div>
                 </div>
             </div>
         </section>
@@ -256,32 +547,58 @@
         <section class="section section-beige outdoor-section">
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-label">Outdoor Living</span>
-                    <h2 class="section-title">Nature-Inspired Retreats</h2>
+                    <span class="section-label">Lifestyle & Amenities</span>
+                    <h2 class="section-title">Club Supreme Villagio & Outdoor Retreats</h2>
                     <div class="gold-line gold-line-center"></div>
                 </div>
                 <div class="outdoor-grid">
                     <div class="outdoor-collage reveal">
-                        <div class="collage-item collage-1"><img src="assets/images/Website/Garden.jpg" alt="Garden"></div>
-                        <div class="collage-item collage-2"><img src="assets/images/Website/BBQ.jpg" alt="BBQ"></div>
-                        <div class="collage-item collage-3"><img src="assets/images/Website/Lawn.jpg" alt="Lawn"></div>
-                        <div class="collage-item collage-4"><img src="assets/images/Website/Fire Pit.jpg" alt="Fire Pit"></div>
+                        <div class="collage-item collage-1"><img src="assets/images/Website/Clubhouse.jpg" alt="Grand Clubhouse"></div>
+                        <div class="collage-item collage-2"><img src="assets/images/Website/Pool.jpg" alt="Resort-Style Pool"></div>
+                        <div class="collage-item collage-3"><img src="assets/images/Website/Garden.jpg" alt="Serene Garden"></div>
+                        <div class="collage-item collage-4"><img src="assets/images/Website/BBQ.jpg" alt="BBQ Area"></div>
+                        <div class="collage-item collage-5"><img src="assets/images/Website/lawn.jpg" alt="Event Lawn"></div>
                     </div>
                     <div class="outdoor-content reveal">
-                        <h3>Expansive Outdoor Spaces</h3>
-                        <p>Discover serene gardens, intimate retreats, and vibrant social spaces designed for every mood and occasion.</p>
+                        <h3>World-Class Experiences</h3>
+                        <p>Discover our grand clubhouse, temperature-controlled resort pools, serene gardens, and vibrant social spaces designed for every mood and occasion.</p>
                         <div class="outdoor-features">
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Butterfly Garden</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 22V12M16 22V12M12 22V6"/></svg></span><span>BBQ & Dining Court</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span>Fire Pit Lounge</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22V8M5 12l7-8 7 8"/></svg></span><span>Meditation Deck</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></span><span>Festival Ground</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5"/></svg></span><span>Picnic Lawn</span></div>
+                            <!-- Clubhouse & Pool -->
+                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg></span><span>Grand Clubhouse</span></div>
+                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"/><polygon points="10 8 16 12 10 16 10 8"/></svg></span><span>Mini Theatre & Banquet</span></div>
+                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h20M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M12 12V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/></svg></span><span>Resort-Style Lap Pool</span></div>
+                            
+                            <!-- Outdoors -->
+                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                    </svg></span><span>Butterfly Garden</span></div>
+                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M8 22V12M16 22V12M12 22V6" />
+                                    </svg></span><span>BBQ & Dining Court</span></div>
+                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path
+                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                    </svg></span><span>Fire Pit Lounge</span></div>
+                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                                        <path d="M3 9h18M9 21V9" />
+                                    </svg></span><span>Festival Ground</span></div>
+                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5" />
+                                        <path d="M2 12l10 5 10-5" />
+                                    </svg></span><span>Pet Park</span></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <section class="section health-section">
             <div class="container">
@@ -292,32 +609,53 @@
                 </div>
                 <div class="health-grid">
                     <div class="health-card reveal">
-                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v4M10 1v4M14 1v4"/></svg></div>
+                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path
+                                    d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v4M10 1v4M14 1v4" />
+                            </svg></div>
                         <h4>Fitness Centre</h4>
                         <p>Fully-equipped gymnasium with modern equipment</p>
                     </div>
                     <div class="health-card reveal">
-                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg></div>
+                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" />
+                            </svg></div>
                         <h4>Yoga & Meditation</h4>
                         <p>Dedicated yoga room and serene meditation deck</p>
                     </div>
                     <div class="health-card reveal">
-                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M12 6v6l4 2" />
+                            </svg></div>
                         <h4>Jogging Track</h4>
                         <p>Soft-surface jogging loop through landscaped areas</p>
                     </div>
                     <div class="health-card reveal">
-                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg></div>
+                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                <path d="M9 3v18M3 9h18" />
+                            </svg></div>
                         <h4>Sports Court</h4>
                         <p>Multi-purpose court for basketball and tennis</p>
                     </div>
                     <div class="health-card reveal">
-                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 20V10M12 20V4M6 20v-6"/></svg></div>
+                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path d="M18 20V10M12 20V4M6 20v-6" />
+                            </svg></div>
                         <h4>Reflexology Walk</h4>
                         <p>Therapeutic stone path for stress relief</p>
                     </div>
                     <div class="health-card reveal">
-                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l6-6 4 4 8-8M21 7H3M21 7v10M21 7H3"/></svg></div>
+                        <div class="health-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 17l6-6 4 4 8-8M21 7H3M21 7v10M21 7H3" />
+                            </svg></div>
                         <h4>Outdoor Fitness</h4>
                         <p>Open-air fitness stations in garden settings</p>
                     </div>
@@ -332,70 +670,23 @@
                     <h2 class="section-title">Floor Plans</h2>
                     <div class="gold-line gold-line-center"></div>
                 </div>
-                <div class="floorplan-tabs reveal">
-                    <button class="tab-btn active" data-tab="ground">Ground Floor</button>
-                    <button class="tab-btn" data-tab="first">First Floor</button>
-                    <button class="tab-btn" data-tab="second">Second Floor</button>
-                    <button class="tab-btn" data-tab="terrace">Terrace</button>
-                </div>
-                <div class="floorplan-content reveal">
-                    <div class="floorplan-panel active" id="ground">
-                        <div class="floorplan-image"><img src="assets/images/Website/2n_FLO.png" alt="Ground Floor"></div>
-                        <div class="floorplan-info">
-                            <h3>Ground Floor Layout</h3>
-                            <div class="floorplan-specs">
-                                <div class="spec"><span>Living Room</span><span>18' x 20'</span></div>
-                                <div class="spec"><span>Dining Area</span><span>12' x 16'</span></div>
-                                <div class="spec"><span>Kitchen</span><span>10' x 14'</span></div>
-                                <div class="spec"><span>Powder Room</span><span>5' x 6'</span></div>
-                                <div class="spec"><span>Private Garden</span><span>Available</span></div>
-                            </div>
-                            <p class="floorplan-area">Carpet Area: 1,100+ sq.ft.</p>
-                            <a href="#inquiry" class="btn btn-primary">Download Floor Plan</a>
-                        </div>
+
+                <div class="floorplan-grid-simple">
+                    <div class="floorplan-item" onclick="showFloorPlanPopup()">
+                        <img src="assets/images/Website/Floorplan1.png" alt="Ground Floor Plan">
+                        <div class="fp-locked-overlay"><span>Click to Unlock</span></div>
                     </div>
-                    <div class="floorplan-panel" id="first">
-                        <div class="floorplan-image"><img src="assets/images/Website/1st_floor.png" alt="First Floor"></div>
-                        <div class="floorplan-info">
-                            <h3>First Floor Layout</h3>
-                            <div class="floorplan-specs">
-                                <div class="spec"><span>Master Bedroom 1</span><span>14' x 16'</span></div>
-                                <div class="spec"><span>Master Bath 1</span><span>8' x 10'</span></div>
-                                <div class="spec"><span>Bedroom 2 + Bath</span><span>12' x 14'</span></div>
-                                <div class="spec"><span>Balcony</span><span>10' x 6'</span></div>
-                                <div class="spec"><span>Lift Provision</span><span>Yes</span></div>
-                            </div>
-                            <p class="floorplan-area">Carpet Area: 900+ sq.ft.</p>
-                            <a href="#inquiry" class="btn btn-primary">Download Floor Plan</a>
-                        </div>
+                    <div class="floorplan-item" onclick="showFloorPlanPopup()">
+                        <img src="assets/images/Website/FLoorplan2.png" alt="First Floor Plan">
+                        <div class="fp-locked-overlay"><span>Click to Unlock</span></div>
                     </div>
-                    <div class="floorplan-panel" id="second">
-                        <div class="floorplan-image"><img src="assets/images/Website/2nd_floor.png" alt="Second Floor"></div>
-                        <div class="floorplan-info">
-                            <h3>Second Floor Layout</h3>
-                            <div class="floorplan-specs">
-                                <div class="spec"><span>Bedroom 3 + Bath</span><span>14' x 16'</span></div>
-                                <div class="spec"><span>Bedroom 4 + Bath</span><span>12' x 14'</span></div>
-                                <div class="spec"><span>Family Lounge</span><span>12' x 14'</span></div>
-                                <div class="spec"><span>Balcony</span><span>10' x 6'</span></div>
-                            </div>
-                            <p class="floorplan-area">Carpet Area: 850+ sq.ft.</p>
-                            <a href="#inquiry" class="btn btn-primary">Download Floor Plan</a>
-                        </div>
+                    <div class="floorplan-item" onclick="showFloorPlanPopup()">
+                        <img src="assets/images/Website/Floorplan3.png" alt="Second Floor Plan">
+                        <div class="fp-locked-overlay"><span>Click to Unlock</span></div>
                     </div>
-                    <div class="floorplan-panel" id="terrace">
-                        <div class="floorplan-image"><img src="assets/images/Website/1st_floor.png" alt="Terrace"></div>
-                        <div class="floorplan-info">
-                            <h3>Terrace Floor Layout</h3>
-                            <div class="floorplan-specs">
-                                <div class="spec"><span>Private Terrace</span><span>30' x 20'</span></div>
-                                <div class="spec"><span>Lounge Area</span><span>15' x 12'</span></div>
-                                <div class="spec"><span>Open Utility</span><span>8' x 10'</span></div>
-                                <div class="spec"><span>Panoramic Views</span><span>All Directions</span></div>
-                            </div>
-                            <p class="floorplan-area">Open Area: 600+ sq.ft.</p>
-                            <a href="#inquiry" class="btn btn-primary">Download Floor Plan</a>
-                        </div>
+                    <div class="floorplan-item" onclick="showFloorPlanPopup()">
+                        <img src="assets/images/Website/Floorplan4.png" alt="Terrace Floor Plan">
+                        <div class="fp-locked-overlay"><span>Click to Unlock</span></div>
                     </div>
                 </div>
             </div>
@@ -405,19 +696,21 @@
             <div class="container">
                 <div class="section-header reveal">
                     <span class="section-label">Investment Merit</span>
-                    <h2 class="section-title light">Why Invest In Villagio</h2>
+                    <h2 class="section-title light">Why Invest In SUPREME VILLAGIO</h2>
                     <div class="gold-line gold-line-center"></div>
                 </div>
                 <div class="invest-grid">
                     <div class="invest-card reveal">
                         <span class="invest-number">01</span>
                         <h3>Rising Demand</h3>
-                        <p>Surge in demand for premium villa living post-pandemic with focus on space, privacy, and nature.</p>
+                        <p>Surge in demand for premium villa living post-pandemic with focus on space, privacy, and
+                            nature.</p>
                     </div>
                     <div class="invest-card reveal">
                         <span class="invest-number">02</span>
                         <h3>Appreciation Potential</h3>
-                        <p>Infrastructure-led growth in Somatane corridor projected to deliver 20-25% annual appreciation.</p>
+                        <p>Infrastructure-led growth in Somatane corridor projected to deliver 20-25% annual
+                            appreciation.</p>
                     </div>
                     <div class="invest-card reveal">
                         <span class="invest-number">03</span>
@@ -427,7 +720,8 @@
                     <div class="invest-card reveal">
                         <span class="invest-number">04</span>
                         <h3>HNI/NRI Demand</h3>
-                        <p>Strong influx of HNI and NRI buyers seeking quality luxury homes in Pune's emerging hotspot.</p>
+                        <p>Strong influx of HNI and NRI buyers seeking quality luxury homes in Pune's emerging hotspot.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -440,20 +734,24 @@
                         <span class="section-label">About the Developer</span>
                         <h2 class="section-title">A Legacy of Excellence</h2>
                         <div class="gold-line"></div>
-                        <p class="developer-text">With over four decades of excellence, we have delivered 70+ landmark projects and created 4000+ happy families. Our commitment to quality, timely delivery, and customer satisfaction defines every endeavor.</p>
-                        <a href="#inquiry" class="btn btn-primary">Learn More</a>
+                        <p class="developer-text">Since 1982, Supreme has shaped cityscapes with reverence, relevance
+                            and respect for life. From Pune to Mumbai, every address carries a signature of thoughtful
+                            planning, lasting value and spaces that reflect an unprecedented nuance in every detail.
+                            With 81+ landmark projects and 8000+ happy families, our commitment to time-bound delivery
+                            and innovation defines every endeavor.</p>
+                        <a href="https://supremeuniversal.in" target="_blank" class="btn btn-primary">Learn More</a>
                     </div>
                     <div class="developer-stats">
                         <div class="dev-stat">
-                            <span class="dev-number" data-target="40">0</span>
+                            <span class="dev-number" data-target="45">0</span>
                             <span class="dev-label">Years of Excellence</span>
                         </div>
                         <div class="dev-stat">
-                            <span class="dev-number" data-target="70">0</span>
+                            <span class="dev-number" data-target="81">0</span>
                             <span class="dev-label">Landmark Projects</span>
                         </div>
                         <div class="dev-stat">
-                            <span class="dev-number" data-target="4000">0</span>
+                            <span class="dev-number" data-target="8000">0</span>
                             <span class="dev-label">Happy Families</span>
                         </div>
                         <div class="dev-stat">
@@ -472,47 +770,81 @@
                     <div class="gold-line gold-line-center"></div>
                     <p class="cta-text">Limited Signature Inventory Available</p>
                     <div class="cta-buttons">
-                        <a href="#inquiry" class="btn btn-gold btn-lg">Book Site Visit</a>
-                        <a href="tel:+918010473982" class="btn btn-outline btn-lg">Call Now</a>
+                        <a href="javascript:void(0)" onclick="showInquiryPopup()" class="btn btn-gold btn-lg">Book Site Visit</a>
+                        <a href="tel:+918010473982" class="btn btn-outline btn-lg call-now-pulse">Call Now</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" style="background: var(--color-charcoal); color: var(--color-white); padding-top: 64px; padding-bottom: 0;">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="/" class="logo">Villagio</a>
-                    <p class="footer-tagline">Signature Edition Luxury Residences</p>
-                    <div class="footer-rera">
-                        <span>MahaRERA Registration:</span>
-                        <span class="rera-number">P521000XXXXX</span>
+            <!-- Main footer grid: 3 columns -->
+            <div class="footer-grid-main">
+                <!-- Brand column -->
+                <div class="footer-brand-col">
+                    <div class="footer-brand-logos">
+                        <img src="assets/images/Website/supreem logo.jpg" alt="Supreme Logo" class="footer-supreem-logo">
+                        <a href="/" class="logo" style="font-family: var(--font-heading); font-size: 1.875rem; color: var(--color-white); margin-bottom: 0; display: inline-block;">SUPREME VILLAGIO</a>
                     </div>
+                    <p style="font-size: 0.875rem; opacity: 0.55; line-height: 1.7; margin-top: 12px;">Signature Edition Luxury Residences<br>Somatane, Pune Ring Road</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul><li><a href="#hero">Home</a></li><li><a href="#inquiry">Inquire</a></li><li><a href="#">Floor Plans</a></li></ul>
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Quick Links</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 10px;"><a href="#hero" style="font-size: 0.875rem; opacity: 0.6;">Home</a></li>
+                        <li style="margin-bottom: 10px;"><a href="javascript:void(0)" onclick="showInquiryPopup()" style="font-size: 0.875rem; opacity: 0.6;">Floor Plans</a></li>
+                        <li style="margin-bottom: 10px;"><a href="javascript:void(0)" onclick="showInquiryPopup()" style="font-size: 0.875rem; opacity: 0.6;">Book Site Visit</a></li>
+                    </ul>
                 </div>
-                <div class="footer-links">
-                    <h4>Residences</h4>
-                    <ul><li><a href="#">4 BHK Villa</a></li><li><a href="#">5 BHK Villa</a></li><li><a href="#">Townhouses</a></li></ul>
-                </div>
-                <div class="footer-links">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="tel:+918010473982">8010473982</a></li>
-                        <li><a href="mailto:thekeyhousing@gmail.com">thekeyhousing@gmail.com</a></li>
-                        <li><p>Somatane, Pune Ring Road,<br>Pune, Maharashtra 412109</p></li>
+                <!-- Contact -->
+                <div class="footer-col">
+                    <h4 class="footer-col-title">Contact</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 16px;">
+                            <a href="tel:+918010473982" class="footer-contact-link footer-phone-link" aria-label="Call us">
+                                <span class="footer-contact-icon">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                </span>
+                                <span class="footer-contact-text">+91 80104 73982</span>
+                            </a>
+                        </li>
+                        <li style="margin-bottom: 14px;">
+                            <a href="https://wa.me/918010473982?text=Hello%2C%20I%20am%20interested%20in%20Supreme%20Villagio." target="_blank" class="footer-contact-link footer-wa-link" aria-label="WhatsApp Us">
+                                <span class="footer-contact-icon footer-wa-icon">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                </span>
+                                <span class="footer-contact-text">WhatsApp Us</span>
+                            </a>
+                        </li>
+                        <li><p style="font-size: 0.875rem; opacity: 0.6;">Somatane, Pune 412109</p></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-disclaimer">
-                <p>Disclaimer: The content is for informational purposes only and does not constitute an offer. All features and specifications are subject to change. Please visit the site for accurate details.</p>
+
+            <!-- RERA row -->
+            <div class="footer-rera-row">
+                <div class="rera-item">
+                    <span class="rera-label">Project MahaRERA</span>
+                    <span class="rera-number">P52100055048</span>
+                </div>
+                <div class="rera-divider"></div>
+                <div class="rera-item">
+                    <span class="rera-label">Partner MahaRERA</span>
+                    <span class="rera-number">A51500043829</span>
+                </div>
             </div>
-            <div class="footer-bottom">
-                <p>© 2026 Villagio. All rights reserved. | <a href="#">Privacy Policy</a></p>
+
+            <!-- Disclaimer full-width -->
+            <div class="footer-disclaimer">
+                <p><strong>Disclaimer:</strong> This website is for informational purposes only and is maintained by Keyhousing, an official authorized Partner for Supreme Villagio. All details are subject to change without prior notice. Images are for representational purposes only.</p>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="footer-bottom-bar">
+                <p>© 2026 SUPREME VILLAGIO. All rights reserved. | <a href="#" style="color: var(--color-gold);">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
@@ -520,14 +852,17 @@
     <div class="popup-overlay" id="exitPopup">
         <div class="popup-modal">
             <button class="popup-close" id="popupClose" aria-label="Close">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
             </button>
             <div class="popup-content">
                 <span class="popup-tag">Exclusive Offer</span>
-                <h2 class="popup-title">Before You Leave —<br>Unlock <em>Exclusive Villagio</em> Pricing</h2>
+                <h2 class="popup-title">Get Exclusive<br><em>Pricing Details</em></h2>
                 <div class="gold-line"></div>
-                <p class="popup-subtitle">Get priority access to floor plans, pricing, and limited inventory</p>
-                <form class="popup-form lead-form" id="exitForm" data-form-id="exit" data-redirect="whatsapp">
+                <p class="popup-subtitle">Get complete floor plan details and exclusive offers — request a call from our
+                    executive.</p>
+                <form class="popup-form lead-form" id="exitForm" data-form-id="exit" data-redirect="thankyou">
                     <input type="hidden" name="utm_source" class="utm-field">
                     <input type="hidden" name="utm_medium" class="utm-field">
                     <input type="hidden" name="utm_campaign" class="utm-field">
@@ -544,30 +879,124 @@
                     <input type="hidden" name="clicks_before_conversion" class="utm-field">
                     <input type="hidden" name="session_id" class="utm-field">
                     <input type="hidden" name="source_form" value="exit">
-                    <input type="text" name="website_url" class="hp-field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px">
-                    <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+                    <input type="text" name="website_url" class="hp-field" tabindex="-1" autocomplete="off"
+                        style="position:absolute;left:-9999px">
+                    <div class="form-group"><input type="text" name="name" placeholder="Your Name" autocomplete="name"
+                            aria-label="Your full name" required></div>
+                    <div class="form-group"><input type="email" name="email" placeholder="Email Address (Optional)"
+                            autocomplete="email" aria-label="Your email address"></div>
                     <div class="form-group phone-input-group">
                         <select name="country_code" class="country-select">
-                            <option value="+91" selected>+91 India</option>
-                            <option value="+1">+1 USA</option>
-                            <option value="+44">+44 UK</option>
-                            <option value="+61">+61 Australia</option>
-                            <option value="+971">+971 UAE</option>
-                            <option value="+49">+49 Germany</option>
-                            <option value="+33">+33 France</option>
-                            <option value="+81">+81 Japan</option>
-                            <option value="+86">+86 China</option>
-                            <option value="+65">+65 Singapore</option>
+                            <option value="+91" selected>+91</option>
+                            <option value="+1">+1</option>
+                            <option value="+44">+44</option>
+                            <option value="+971">+971</option>
                         </select>
-                        <input type="tel" name="phone" class="phone-field" placeholder="Phone Number" required>
+                        <input type="tel" name="phone" class="phone-field" placeholder="Phone Number" autocomplete="tel"
+                            required>
                     </div>
-                    <button type="submit" class="btn btn-gold btn-full">Get Exclusive Pricing</button>
+                    <button type="submit" class="btn btn-gold btn-full">Get Pricing Details</button>
+                    <a href="https://wa.me/918010473982" class="btn btn-whatsapp btn-full" target="_blank"
+                        rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        Chat on WhatsApp
+                    </a>
                 </form>
                 <p class="popup-privacy">We respect your privacy. No spam, ever.</p>
             </div>
         </div>
     </div>
 
+    <div class="popup-overlay" id="floorplanPopup">
+        <div class="popup-modal">
+            <button class="popup-close" id="floorplanPopupClose" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 6L6 18M6 6l12 12" />
+                </svg>
+            </button>
+            <div class="popup-content">
+                <span class="popup-tag">Floor Plans</span>
+                <h2 class="popup-title">Something<br><em>Interesting</em></h2>
+                <div class="gold-line"></div>
+                <p class="popup-subtitle">Get complete floor plan details and exclusive offers — request a call from our
+                    executive.</p>
+                <form class="popup-form lead-form" id="floorplanForm" data-form-id="floorplan" data-redirect="thankyou">
+                    <input type="hidden" name="utm_source" class="utm-field">
+                    <input type="hidden" name="utm_medium" class="utm-field">
+                    <input type="hidden" name="utm_campaign" class="utm-field">
+                    <input type="hidden" name="utm_content" class="utm-field">
+                    <input type="hidden" name="page_url" class="utm-field">
+                    <input type="hidden" name="referrer" class="utm-field">
+                    <input type="hidden" name="browser" class="utm-field">
+                    <input type="hidden" name="device_type" class="utm-field">
+                    <input type="hidden" name="os" class="utm-field">
+                    <input type="hidden" name="city" class="utm-field">
+                    <input type="hidden" name="location" class="utm-field">
+                    <input type="hidden" name="timezone" class="utm-field">
+                    <input type="hidden" name="time_on_site" class="utm-field">
+                    <input type="hidden" name="clicks_before_conversion" class="utm-field">
+                    <input type="hidden" name="session_id" class="utm-field">
+                    <input type="hidden" name="source_form" value="floorplan">
+                    <input type="text" name="website_url" class="hp-field" tabindex="-1" autocomplete="off"
+                        style="position:absolute;left:-9999px">
+                    <div class="form-group"><input type="text" name="name" placeholder="Your Name" autocomplete="name"
+                            aria-label="Your full name" required></div>
+                    <div class="form-group"><input type="email" name="email" placeholder="Email Address (Optional)"
+                            autocomplete="email" aria-label="Your email address"></div>
+                    <div class="form-group phone-input-group">
+                        <select name="country_code" class="country-select">
+                            <option value="+91" selected>+91</option>
+                            <option value="+1">+1</option>
+                            <option value="+44">+44</option>
+                            <option value="+971">+971</option>
+                        </select>
+                        <input type="tel" name="phone" class="phone-field" placeholder="Phone Number" autocomplete="tel"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-gold btn-full">Get Floor Plans</button>
+                    <a href="https://wa.me/918010473982" class="btn btn-whatsapp btn-full" target="_blank"
+                        rel="noopener">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                        </svg>
+                        Unlock on WhatsApp
+                    </a>
+                </form>
+                <p class="popup-privacy">We respect your privacy. No spam, ever.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="scripts/main.js"></script>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" aria-label="Scroll to top"
+        style="position: fixed; bottom: 100px; right: 24px; width: 44px; height: 44px; background: var(--color-white); border-radius: 50%; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; color: var(--color-text); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 998; border: none; cursor: pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6" />
+        </svg>
+    </button>
+
+    <!-- Toast Notification -->
+    <div class="toast"
+        style="position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(100px); background: var(--color-charcoal); color: white; padding: 16px 24px; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); z-index: 10002; opacity: 0; transition: all 0.4s ease; border: none; border-left: 4px solid var(--color-gold);">
+    </div>
+    <!-- The Grab: Floating Invitation Modal -->
+    <div id="grab-modal" class="grab-modal">
+        <button id="close-grab-modal" aria-label="Close Invitation" class="close-grab-modal">&times;</button>
+        <p class="grab-sub">Exclusive Offer</p>
+        <h3 class="grab-title grab-variable-text">30:70</h3>
+        <p class="grab-desc">Maintain 70% liquidity for your private ventures while we build your sanctuary.</p>
+        <a href="javascript:void(0)" onclick="showInquiryPopup(); document.getElementById('grab-modal').style.display='none';" class="btn btn-gold btn-sm">Claim Privilege</a>
+    </div>
+
 </body>
+
 </html>
