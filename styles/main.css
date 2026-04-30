@@ -3250,9 +3250,9 @@ input.valid {
 .type-price {
     display: block;
     font-family: var(--font-heading);
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: var(--color-gold);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-primary);
     margin-top: 0.5rem;
     padding-top: 0.5rem;
     border-top: 1px solid rgba(0,0,0,0.05);
@@ -3366,3 +3366,242 @@ input.valid {
         height: 50px;
     }
 }
+
+/* =============================================
+   POSSESSION BADGE
+   ============================================= */
+.possession-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(15, 61, 46, 0.05);
+    color: var(--color-primary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+    border: 1px solid rgba(15, 61, 46, 0.1);
+}
+
+.possession-badge svg {
+    color: var(--color-gold);
+}
+
+/* =============================================
+   RE-DESIGNED 30:70 SECTION (COMPACT & ATTRACTIVE)
+   ============================================= */
+.offer-section {
+    padding: var(--space-2xl) 0;
+}
+
+.offer-wrapper {
+    max-width: 1000px;
+}
+
+.offer-card-new {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    display: flex;
+    position: relative;
+    border: 1px solid rgba(200, 169, 107, 0.2);
+}
+
+.offer-card-accent {
+    width: 12px;
+    background: linear-gradient(to bottom, var(--color-gold), var(--color-primary));
+}
+
+.offer-card-content {
+    padding: 40px;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.offer-plan-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.compact-step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: var(--color-cream);
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+}
+
+.compact-step:hover {
+    transform: translateX(10px);
+    border-color: var(--color-gold);
+}
+
+.compact-percent {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-gold);
+    min-width: 60px;
+}
+
+.compact-info h4 {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.compact-info p {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin: 0;
+}
+
+.offer-details-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.offer-highlights-compact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.offer-highlights-compact li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.offer-highlights-compact li svg {
+    color: #4ade80;
+    flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+    .offer-card-content {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+}
+
+/* =============================================
+   CONSOLIDATED LOCATION & INVESTMENT
+   ============================================= */
+.location-investment-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.investment-highlights-mini {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.invest-card-mini {
+    background: var(--color-white);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.invest-card-mini .card-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--color-cream);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gold);
+    margin-bottom: 12px;
+}
+
+.invest-card-mini h4 {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.invest-card-mini p {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .location-investment-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =============================================
+   CONSOLIDATED AMENITIES & WELLNESS
+   ============================================= */
+.amenities-wellness-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.wellness-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.health-card-compact {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+}
+
+.health-card-compact .health-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    background: var(--color-beige);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+}
+
+.health-card-compact .health-info h4 {
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.health-card-compact .health-info p {
+    font-size: 0.7rem;
+    opacity: 0.6;
+    margin: 0;
+}
+
