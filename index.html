@@ -9,8 +9,10 @@
         content="SUPREME VILLAGIO - Signature Edition Luxury Villas & Townhouses in Somatane, Pune.">
     <meta name="keywords" content="luxury villas, townhouses, real estate, Pune, residential, premium housing">
     <meta name="author" content="SUPREME VILLAGIO">
+    <link rel="dns-prefetch" href="https://script.google.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="assets/images/Website/Villagio_optimized.jpg">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
@@ -85,6 +87,29 @@
             <div class="preloader-progress" style="width: 30%;"></div>
         </div>
     </div>
+    <script>
+        // Immediate preloader handling
+        (function() {
+            const preloader = document.querySelector('.preloader');
+            const progress = preloader.querySelector('.preloader-progress');
+            
+            const hide = () => {
+                if (progress) progress.style.width = '100%';
+                setTimeout(() => {
+                    preloader.classList.add('hidden');
+                    document.body.style.overflow = ''; // Ensure scrolling is enabled
+                }, 300);
+            };
+
+            // Safety fallback: hide after 3 seconds no matter what
+            const fallback = setTimeout(hide, 3000);
+
+            window.addEventListener('load', () => {
+                clearTimeout(fallback);
+                hide();
+            });
+        })();
+    </script>
 
     <!-- Progress Bar -->
     <div class="progress-bar" style="width: 0%;"></div>
@@ -152,7 +177,7 @@
     <main>
         <section class="hero" id="hero">
             <div class="hero-bg">
-                <img src="assets/images/Website/hero_bg.jpg" alt="Villagio">
+                <img src="assets/images/Website/hero_bg.jpg" alt="Villagio" fetchpriority="high">
                 <div class="hero-overlay"></div>
             </div>
             <div class="container">
@@ -258,77 +283,114 @@
             </div>
         </section>
 
-        <section class="section offer-section" id="offer">
+        <section class="section offer-section" id="offer" style="background: linear-gradient(135deg, #fdfbf7 0%, #f5f2ed 100%); overflow: hidden; position: relative;">
+            <!-- Subtle background accent -->
+            <div style="position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(200, 169, 107, 0.05) 0%, transparent 70%);"></div>
+            
             <div class="container">
                 <div class="section-header reveal">
-                    <span class="section-label">Current Offer</span>
-                    <h2 class="section-title">Exclusive <em>30:70</em> Payment Plan</h2>
+                    <span class="section-label" style="background: var(--color-gold); color: white; padding: 4px 12px; border-radius: 20px; font-weight: 600; letter-spacing: 0.1em; margin-bottom: 16px; display: inline-block;">Limited Opportunity</span>
+                    <h2 class="section-title">Exclusive <em>30:70</em> Luxury Plan</h2>
                     <div class="gold-line gold-line-center"></div>
-                    <!-- 3-Day Countdown Timer -->
-                    <div class="offer-countdown" id="offerCountdown">
-                        <p class="countdown-label">Offer Valid For</p>
+                    
+                    <!-- 15-Day Countdown Timer -->
+                    <div class="offer-countdown" id="offerCountdown" style="margin-top: 32px; background: white; padding: 20px 40px; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 24px;">
+                        <div class="countdown-label" style="font-weight: 600; color: var(--color-text); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">Closing In</div>
                         <div class="countdown-blocks">
                             <div class="countdown-block">
-                                <span class="countdown-val" id="cd-days">00</span>
-                                <span class="countdown-unit">Days</span>
+                                <span class="countdown-val" id="cd-days" style="color: var(--color-gold-dark); font-weight: 700; font-size: 1.5rem;">00</span>
+                                <span class="countdown-unit" style="font-size: 0.7rem; opacity: 0.5;">Days</span>
                             </div>
-                            <span class="countdown-sep">:</span>
+                            <span class="countdown-sep" style="color: var(--color-gold); font-weight: 300;">:</span>
                             <div class="countdown-block">
-                                <span class="countdown-val" id="cd-hours">00</span>
-                                <span class="countdown-unit">Hours</span>
+                                <span class="countdown-val" id="cd-hours" style="color: var(--color-gold-dark); font-weight: 700; font-size: 1.5rem;">00</span>
+                                <span class="countdown-unit" style="font-size: 0.7rem; opacity: 0.5;">Hours</span>
                             </div>
-                            <span class="countdown-sep">:</span>
+                            <span class="countdown-sep" style="color: var(--color-gold); font-weight: 300;">:</span>
                             <div class="countdown-block">
-                                <span class="countdown-val" id="cd-mins">00</span>
-                                <span class="countdown-unit">Mins</span>
+                                <span class="countdown-val" id="cd-mins" style="color: var(--color-gold-dark); font-weight: 700; font-size: 1.5rem;">00</span>
+                                <span class="countdown-unit" style="font-size: 0.7rem; opacity: 0.5;">Mins</span>
                             </div>
-                            <span class="countdown-sep">:</span>
+                            <span class="countdown-sep" style="color: var(--color-gold); font-weight: 300;">:</span>
                             <div class="countdown-block">
-                                <span class="countdown-val" id="cd-secs">00</span>
-                                <span class="countdown-unit">Secs</span>
+                                <span class="countdown-val" id="cd-secs" style="color: var(--color-gold-dark); font-weight: 700; font-size: 1.5rem;">00</span>
+                                <span class="countdown-unit" style="font-size: 0.7rem; opacity: 0.5;">Secs</span>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="offer-wrapper reveal">
-                    <div class="offer-card-new">
-                        <div class="offer-card-accent"></div>
-                        <div class="offer-card-content">
-                            <div class="offer-plan-compact">
-                                <div class="possession-badge">
-                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                    Possession in 2 Years
+
+                <div class="offer-wrapper reveal" style="max-width: 900px; margin: 48px auto 0;">
+                    <div class="offer-card-new" style="background: white; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); overflow: hidden; display: flex; flex-direction: column;">
+                        <div class="offer-card-accent" style="height: 6px; background: linear-gradient(90deg, #C8A96B, #8B7344);"></div>
+                        <div class="offer-card-content" style="padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                            <div class="offer-plan-compact" style="border-right: 1px solid rgba(0,0,0,0.05); padding-right: 40px;">
+                                <div class="possession-badge" style="background: rgba(200, 169, 107, 0.1); color: var(--color-gold-dark); font-weight: 600; padding: 6px 16px; border-radius: 30px; display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; margin-bottom: 24px;">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                    Move in within 18-24 Months
                                 </div>
-                                <div class="compact-step">
-                                    <span class="compact-percent">30%</span>
+                                <div class="compact-step" style="margin-bottom: 24px;">
+                                    <span class="compact-percent" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); display: block; line-height: 1;">30%</span>
                                     <div class="compact-info">
-                                        <h4>During Agreement</h4>
-                                        <p>Secure your dream villa today</p>
+                                        <h4 style="font-family: var(--font-heading); font-size: 1.1rem; margin: 8px 0 4px;">During Agreement</h4>
+                                        <p style="font-size: 0.9rem; opacity: 0.6;">Immediate registration & peace of mind</p>
                                     </div>
                                 </div>
                                 <div class="compact-step">
-                                    <span class="compact-percent">70%</span>
+                                    <span class="compact-percent" style="font-size: 2.5rem; font-weight: 800; color: var(--color-primary); display: block; line-height: 1;">70%</span>
                                     <div class="compact-info">
-                                        <h4>On Possession</h4>
-                                        <p>Move in stress-free in 24 months</p>
+                                        <h4 style="font-family: var(--font-heading); font-size: 1.1rem; margin: 8px 0 4px;">On Possession</h4>
+                                        <p style="font-size: 0.9rem; opacity: 0.6;">Zero pre-EMI burden until you move in</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="offer-details-compact">
-                                <ul class="offer-highlights-compact">
-                                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> No Heavy EMIs During Construction</li>
-                                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 61% Appreciation in 3 Years</li>
-                                    <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> MahaRERA Registered Project</li>
+                                <ul class="offer-highlights-compact" style="list-style: none; padding: 0; margin-bottom: 32px;">
+                                    <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                        <span style="width: 24px; height: 24px; background: #eaf5f0; color: #2e7d32; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                                        <span style="font-weight: 500; font-size: 0.95rem;">Maintain Capital Liquidity</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                                        <span style="width: 24px; height: 24px; background: #eaf5f0; color: #2e7d32; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                                        <span style="font-weight: 500; font-size: 0.95rem;">High Investment Appreciation</span>
+                                    </li>
+                                    <li style="display: flex; align-items: center; gap: 12px;">
+                                        <span style="width: 24px; height: 24px; background: #eaf5f0; color: #2e7d32; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>
+                                        <span style="font-weight: 500; font-size: 0.95rem;">Official Partner Support</span>
+                                    </li>
                                 </ul>
-                                <div class="offer-cta" style="display: flex; gap: 10px; margin-top: 10px;">
-                                    <a href="javascript:void(0)" onclick="showInquiryPopup()" class="btn btn-gold" style="flex: 1; font-size: 0.7rem;">Avail Offer</a>
-                                    <a href="tel:+918010473982" class="btn btn-outline-dark call-now-pulse" style="flex: 1; font-size: 0.7rem;">Call Now</a>
+                                <div class="offer-cta" style="display: flex; flex-direction: column; gap: 12px;">
+                                    <a href="javascript:void(0)" onclick="showInquiryPopup()" class="btn btn-gold" style="padding: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">Unlock Exclusive Pricing</a>
+                                    <p style="font-size: 0.75rem; text-align: center; opacity: 0.5;">*Valid for first 5 units only</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <!-- Add CSS to fix mobile view of the above grid -->
+            <style>
+                @media (max-width: 768px) {
+                    .offer-card-content {
+                        grid-template-columns: 1fr !important;
+                        padding: 24px !important;
+                        gap: 24px !important;
+                    }
+                    .offer-plan-compact {
+                        border-right: none !important;
+                        padding-right: 0 !important;
+                        border-bottom: 1px solid rgba(0,0,0,0.05);
+                        padding-bottom: 24px !important;
+                    }
+                    .offer-countdown {
+                        padding: 12px 24px !important;
+                        gap: 12px !important;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                }
+            </style>
         </section>
 
         <section class="section location-section" id="location">
@@ -341,11 +403,11 @@
                 <div class="location-investment-grid">
                     <div class="location-visual-compact reveal">
                         <div class="location-image">
-                            <img src="assets/images/Website/Location.jpeg" alt="Location" loading="lazy" decoding="async">
+                            <img src="assets/images/Website/Supreme-location.jpg" alt="Project Location" loading="lazy" decoding="async" style="border-radius: 12px; box-shadow: var(--shadow-md);">
                             <div class="location-badge"><span class="badge-number">15</span><span class="badge-text">Min to Expressway</span></div>
                         </div>
                         <div class="location-info-mini" style="margin-top: 20px;">
-                            <p class="location-lead">Pune's emerging luxury corridor with unmatched connectivity and 61% appreciation potential.</p>
+                            <p class="location-lead">Somatane Growth Corridor — Pune's emerging luxury destination with unmatched connectivity and appreciation potential.</p>
                         </div>
                     </div>
                     <div class="investment-highlights-mini reveal">
@@ -406,7 +468,7 @@
                                 <span class="type-label">MINT</span>
                                 <h4>4 BHK Townhouses</h4>
                                 <span class="type-area">3,394+ Sq. Ft. Usable</span>
-                                <span class="type-price">&#8377; 2.69 Cr <em>onwards</em></span>
+                                <span class="type-price">&#8377; 2.79 Cr <em>onwards</em></span>
                             </div>
                         </div>
                         <div class="project-highlights">
@@ -492,62 +554,47 @@
                     <div class="outdoor-content reveal">
                         <h3>World-Class Experiences</h3>
                         <p>Discover our grand clubhouse, temperature-controlled resort pools, serene gardens, and vibrant social spaces designed for every mood and occasion.</p>
-                        <div class="outdoor-features">
-                            <!-- Clubhouse & Pool -->
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg></span><span>Grand Clubhouse</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="2" ry="2"/><polygon points="10 8 16 12 10 16 10 8"/></svg></span><span>Mini Theatre & Banquet</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h20M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8M12 12V4a2 2 0 0 0-2-2 2 2 0 0 0-2 2v8"/></svg></span><span>Resort-Style Lap Pool</span></div>
+                        
+                        <div class="lifestyle-features-grid">
+                            <div class="feature-group">
+                                <h4>Outdoor Retreats</h4>
+                                <div class="outdoor-item">
+                                    <span class="outdoor-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 21v-4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"/></svg></span>
+                                    <span>Grand Clubhouse</span>
+                                </div>
+                                <div class="outdoor-item">
+                                    <span class="outdoor-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg></span>
+                                    <span>Butterfly Garden</span>
+                                </div>
+                                <div class="outdoor-item">
+                                    <span class="outdoor-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 22V12M16 22V12M12 22V6" /></svg></span>
+                                    <span>BBQ & Dining Court</span>
+                                </div>
+                            </div>
                             
-                            <!-- Outdoors -->
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                                    </svg></span><span>Butterfly Garden</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M8 22V12M16 22V12M12 22V6" />
-                                    </svg></span><span>BBQ & Dining Court</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <circle cx="12" cy="12" r="10" />
-                                        <path
-                                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                                    </svg></span><span>Fire Pit Lounge</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <rect x="3" y="3" width="18" height="18" rx="2" />
-                                        <path d="M3 9h18M9 21V9" />
-                                    </svg></span><span>Festival Ground</span></div>
-                            <div class="outdoor-item"><span class="outdoor-icon"><svg width="24" height="24"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5" />
-                                        <path d="M2 12l10 5 10-5" />
-                                    </svg></span><span>Pet Park</span></div>
+                            <div class="feature-group">
+                                <h4>Health & Wellness</h4>
+                                <div class="outdoor-item">
+                                    <span class="outdoor-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v4M10 1v4M14 1v4"/></svg></span>
+                                    <span>Fitness Centre</span>
+                                </div>
+                                <div class="outdoor-item">
+                                    <span class="outdoor-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg></span>
+                                    <span>Yoga & Meditation</span>
+                                </div>
+                                <div class="outdoor-item">
+                                    <span class="outdoor-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+                                    <span>Jogging Track</span>
+                                </div>
+                            </div>
                         </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </section>
 
 
-                        <div class="wellness-grid-compact reveal">
-                            <div class="health-card-compact">
-                                <div class="health-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8zM6 1v4M10 1v4M14 1v4"/></svg></div>
-                                <div class="health-info"><h4>Fitness Centre</h4><p>Modern equipment</p></div>
-                            </div>
-                            <div class="health-card-compact">
-                                <div class="health-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg></div>
-                                <div class="health-info"><h4>Yoga & Meditation</h4><p>Serene deck</p></div>
-                            </div>
-                            <div class="health-card-compact">
-                                <div class="health-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
-                                <div class="health-info"><h4>Jogging Track</h4><p>Nature loop</p></div>
-                            </div>
-                            <div class="health-card-compact">
-                                <div class="health-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg></div>
-                                <div class="health-info"><h4>Sports Court</h4><p>Multipurpose</p></div>
-                            </div>
-                        </div>
 
         <section class="section section-beige floorplan-section">
             <div class="container">
@@ -559,19 +606,19 @@
 
                 <div class="floorplan-grid-simple">
                     <div class="floorplan-item" onclick="showFloorPlanPopup()">
-                        <img src="assets/images/Website/Floorplan1.png" alt="Ground Floor Plan" loading="lazy" decoding="async">
+                        <img src="assets/images/Website/Floorplan1.jpg" alt="Ground Floor Plan" loading="lazy" decoding="async">
                         <div class="fp-locked-overlay"><span>Click to Unlock</span></div>
                     </div>
                     <div class="floorplan-item" onclick="showFloorPlanPopup()">
-                        <img src="assets/images/Website/FLoorplan2.png" alt="First Floor Plan" loading="lazy" decoding="async">
+                        <img src="assets/images/Website/FLoorplan2.jpg" alt="First Floor Plan" loading="lazy" decoding="async">
                         <div class="fp-locked-overlay"><span>Click to Unlock</span></div>
                     </div>
                     <div class="floorplan-item" onclick="showFloorPlanPopup()">
-                        <img src="assets/images/Website/Floorplan3.png" alt="Second Floor Plan" loading="lazy" decoding="async">
+                        <img src="assets/images/Website/Floorplan3.jpg" alt="Second Floor Plan" loading="lazy" decoding="async">
                         <div class="fp-locked-overlay"><span>Click to Unlock</span></div>
                     </div>
                     <div class="floorplan-item" onclick="showFloorPlanPopup()">
-                        <img src="assets/images/Website/Floorplan4.png" alt="Terrace Floor Plan" loading="lazy" decoding="async">
+                        <img src="assets/images/Website/Floorplan4.jpg" alt="Terrace Floor Plan" loading="lazy" decoding="async">
                         <div class="fp-locked-overlay"><span>Click to Unlock</span></div>
                     </div>
                 </div>
@@ -711,15 +758,36 @@
             </div>
 
             <!-- RERA row -->
-            <div class="footer-rera-row">
-                <div class="rera-item">
-                    <span class="rera-label">Project MahaRERA</span>
-                    <span class="rera-number">P52100055048</span>
+            <div class="footer-rera-container" style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
+                <div class="rera-scanner-box" style="width: 140px; height: 140px; overflow: hidden; border-radius: 8px; border: 2px solid rgba(200, 169, 107, 0.3); background: white; padding: 5px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img src="assets/images/Website/scanner-Supreem.jpg" alt="MahaRERA Scanner" style="width: 100%; height: 100%; object-fit: contain;">
                 </div>
-                <div class="rera-divider"></div>
-                <div class="rera-item">
-                    <span class="rera-label">Partner MahaRERA</span>
-                    <span class="rera-number">A51500043829</span>
+                <span class="scanner-label" style="font-size: 0.75rem; opacity: 0.6; margin-top: -16px;">Scan to Verify Project</span>
+                <div class="footer-rera-numbers" style="display: flex; justify-content: center; align-items: center; gap: 32px; width: 100%;">
+                    <div class="rera-item">
+                        <span class="rera-label">Partner MahaRERA</span>
+                        <span class="rera-number">A52100030581</span>
+                    </div>
+                    <div class="rera-divider-v"></div>
+                    <div class="rera-item">
+                        <span class="rera-label">Project MahaRERA</span>
+                        <span class="rera-number">P52100055048</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-banks-row">
+                <span class="banks-label">Approved Banks for Home Loan</span>
+                <div class="banks-list">
+                    <span>HDFC Bank</span>
+                    <span>|</span>
+                    <span>ICICI Bank</span>
+                    <span>|</span>
+                    <span>SBI</span>
+                    <span>|</span>
+                    <span>Axis Bank</span>
+                    <span>|</span>
+                    <span>IDFC First</span>
                 </div>
             </div>
 
@@ -858,9 +926,9 @@
     </div>
 
     <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="scripts/main.js" defer></script>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-top" aria-label="Scroll to top"
