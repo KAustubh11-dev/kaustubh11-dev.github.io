@@ -3703,3 +3703,72 @@ input.valid {
 
 
 
+
+/* =============================================
+   NEW REFINEMENTS: MENU, HEADER & VISUALS
+   ============================================= */
+
+/* Navigation Menu Bar - Desktop */
+.nav-menu {
+    display: none;
+}
+
+@media (min-width: 1025px) {
+    .nav-menu {
+        display: block;
+        margin: 0 auto;
+    }
+    .nav-menu ul {
+        display: flex;
+        gap: 30px;
+    }
+    .nav-menu ul li a {
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--color-white);
+        transition: color 0.3s ease;
+    }
+    .nav-menu ul li a:hover {
+        color: var(--color-gold);
+    }
+}
+
+/* Mobile Header & Logo Optimization */
+@media (max-width: 768px) {
+    .header {
+        padding: 6px 0 !important;
+        background: rgba(15, 61, 46, 0.98) !important;
+        backdrop-filter: blur(10px);
+    }
+    .logo {
+        font-size: 1.1rem !important;
+    }
+    .header-cta-wrapper, .lmpr-wrapper {
+        display: none; /* Simplify mobile header */
+    }
+    .nav-toggle {
+        margin-left: auto;
+        transform: scale(0.85);
+    }
+}
+
+/* Floorplan Section Blur Reduction (10% concept) */
+.floorplan-item img {
+    filter: blur(1.2px) !important;
+}
+.floorplan-item:hover img {
+    filter: blur(0.4px) !important;
+}
+
+/* Pricing Visibility & Font */
+.type-price {
+    font-family: 'Arial Black', Arial, sans-serif !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    font-size: 1.65rem !important;
+    letter-spacing: -0.02em;
+    color: var(--color-primary) !important;
+}
+
