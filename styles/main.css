@@ -100,7 +100,7 @@ h3,
 h4 {
     font-family: var(--font-heading);
     font-weight: 500;
-    line-height: 1.15;
+    line-height: 1.3;
     color: var(--color-text);
 }
 
@@ -2847,6 +2847,7 @@ input.valid {
     font-size: 3rem;
     margin-bottom: var(--space-sm);
     font-family: var(--font-heading);
+    color: var(--color-gold);
     font-variation-settings: "wght" 200;
 }
 
@@ -3251,7 +3252,7 @@ input.valid {
 .type-price {
     display: block;
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--color-primary);
     margin-top: 0.5rem;
