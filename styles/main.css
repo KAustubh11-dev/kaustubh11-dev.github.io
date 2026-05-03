@@ -3754,12 +3754,13 @@ input.valid {
     }
 }
 
-/* Floorplan Section Blur Reduction (10% concept) */
+/* Floorplan Section Blur (Exact 0.03px) */
 .floorplan-item img {
-    filter: blur(1.2px) !important;
+    filter: blur(0.03px) !important;
 }
+
 .floorplan-item:hover img {
-    filter: blur(0.4px) !important;
+    filter: blur(0px) !important;
 }
 
 /* Pricing Visibility & Font */
@@ -3772,3 +3773,320 @@ input.valid {
     color: var(--color-primary) !important;
 }
 
+
+/* =============================================
+   PROPORTIONAL DESIGN (Based on Reference Site)
+   ============================================= */
+
+@media (max-width: 768px) {
+    /* 1. Header & Menu */
+    .header {
+        padding: 15px 0 !important;
+        background: rgba(15, 61, 46, 0.98) !important;
+    }
+    .logo {
+        font-size: 1.3rem !important;
+    }
+    .nav-right.mobile-open {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 20px;
+    }
+    .mobile-menu-links {
+        display: block !important;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .mobile-menu-links ul {
+        list-style: none;
+        padding: 0;
+    }
+    .mobile-menu-links ul li {
+        margin-bottom: 25px;
+    }
+    .mobile-menu-links ul li a {
+        font-size: 1.6rem;
+        color: var(--color-white);
+        font-family: var(--font-heading);
+        text-decoration: none;
+    }
+
+    /* 2. Compact Hero (75% Viewport) */
+    .hero {
+        height: 80vh !important; /* Slightly more for breathing room */
+        height: 80dvh !important;
+        padding-top: 100px !important;
+    }
+    .hero-content {
+        text-align: left !important;
+    }
+    .hero-title {
+        font-size: 1.8rem !important;
+        line-height: 1.1 !important;
+    }
+    .hero-subtitle {
+        font-size: 0.9rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 3. Integrated Compact Form */
+    .hero-form-compact {
+        display: block !important;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero-form-compact .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .hero-form-compact input {
+        height: 45px !important;
+        background: rgba(255,255,255,0.9);
+        border: none;
+        padding: 0 15px;
+        border-radius: var(--radius-sm);
+        font-size: 0.9rem;
+    }
+    .hero-form-compact .btn {
+        height: 45px !important;
+        padding: 0 !important;
+    }
+    .form-note {
+        font-size: 0.75rem;
+        margin-top: 10px;
+        opacity: 0.8;
+        color: white;
+    }
+    
+    /* Original Hero Form (Hide on mobile to prevent double forms) */
+    .hero-form {
+        display: none !important;
+    }
+
+    /* 4. Section Proportions (60px padding) */
+    .section {
+        padding: 60px 0 !important;
+    }
+    .section-header {
+        margin-bottom: 40px !important;
+        text-align: left !important;
+    }
+
+    /* 5. Image Constraint (Anti-Cropping) */
+    .project-visual {
+        max-height: 320px !important;
+        margin-bottom: 25px;
+        overflow: hidden;
+    }
+    .project-visual img.project-main {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 320px !important;
+        object-fit: contain !important;
+        border-radius: var(--radius-md);
+    }
+    .masterplan-visual {
+        max-height: 350px !important;
+    }
+    .masterplan-visual img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 350px !important;
+        object-fit: contain !important;
+    }
+
+    /* 6. Residences Layout Fix */
+    .project-grid {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    .project-content {
+        padding-left: 0 !important;
+    }
+}
+
+/* Desktop Fix for Element Overlap */
+@media (min-width: 1025px) {
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-menu {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+    .nav-right {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+    .mobile-menu-links, .hero-form-compact {
+        display: none !important;
+    }
+}
+
+/* Pulsating Shine Effect */
+.shine-text {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    animation: text-pulse 2s infinite ease-in-out;
+}
+
+.shine-text::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    animation: shine-sweep 3s infinite;
+}
+
+@keyframes shine-sweep {
+    0% { left: -150%; }
+    50% { left: 150%; }
+    100% { left: 150%; }
+}
+
+@keyframes text-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+/* Location Image Mobile Fix */
+@media (max-width: 768px) {
+    .location-image img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 350px !important;
+        object-fit: contain !important;
+        border-radius: var(--radius-md) !important;
+    }
+    .location-visual-compact {
+        margin-bottom: 30px !important;
+    }
+}
+
+/* Desktop Header Alignment Fix */
+@media (min-width: 1025px) {
+    .nav {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        width: 100% !important;
+        gap: 20px !important;
+    }
+    .nav-menu {
+        flex: 1 !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .nav-menu ul {
+        display: flex !important;
+        gap: 15px !important; /* Reduced gap */
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+    }
+    .nav-menu ul li a {
+        font-size: 0.9rem !important;
+        white-space: nowrap !important;
+    }
+    .nav-right {
+        display: flex !important;
+        gap: 15px !important;
+        align-items: center !important;
+    }
+    
+    /* Hide lure text on smaller desktops to prevent overlap */
+    @media (max-width: 1366px) {
+        .lmpr-lure, .header-cta-lure {
+            display: none !important;
+        }
+    }
+}
+
+/* Tightened Mobile Spacing (Global) */
+@media (max-width: 768px) {
+    body {
+        line-height: 1.5 !important; /* Reduced from 1.75 */
+    }
+    .section {
+        padding: 40px 0 !important; /* Reduced from 60px */
+    }
+    .section-header {
+        margin-bottom: 25px !important; /* Reduced from 40px */
+    }
+    .section-title {
+        margin-bottom: 10px !important; /* Reduced from 16px */
+    }
+    p {
+        margin-bottom: 0.75rem !important; /* Reduced from 1rem */
+    }
+    .gold-line {
+        margin: 10px 0 !important; /* Tighter line spacing */
+    }
+    
+    /* Specific Compact Overrides */
+    .project-visual {
+        margin-bottom: 15px !important; /* Tighter image-to-text */
+    }
+    .location-visual-compact {
+        margin-bottom: 15px !important;
+    }
+    .compact-step {
+        margin-bottom: 20px !important; /* Tighter offer steps */
+    }
+    .compact-percent {
+        font-size: 2.2rem !important; /* Slightly smaller for compactness */
+    }
+}
+
+/* Further Tightened Spacing for Buttons & Section Transitions */
+@media (max-width: 768px) {
+    .section {
+        padding: 30px 0 !important; /* Extremely compact section padding */
+    }
+    
+    /* Button Compactness */
+    .btn {
+        padding: 0.75rem 1.5rem !important; /* Reduced from 1rem x 2rem */
+        font-size: 0.7rem !important;
+        margin-top: 10px !important; /* Tighter gap above buttons */
+    }
+    
+    .hero-cta {
+        margin-top: 15px !important;
+        gap: 10px !important;
+    }
+    
+    .offer-cta-box {
+        margin-top: 15px !important;
+    }
+    
+    .project-content .btn {
+        margin-top: 10px !important;
+    }
+    
+    /* Remove redundant margins between stacked elements */
+    .container > * + * {
+        margin-top: 15px !important;
+    }
+}
