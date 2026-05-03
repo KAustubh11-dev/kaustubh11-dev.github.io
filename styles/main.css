@@ -4208,3 +4208,32 @@ input.valid {
         margin-bottom: 12px !important;
     }
 }
+
+/* Horizontal Scroll for Investment Merit (Mobile Only) */
+@media (max-width: 768px) {
+    .why-invest {
+        padding-bottom: 50px !important;
+    }
+    .invest-grid {
+        display: flex !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 20px !important;
+        padding-bottom: 20px !important;
+        margin-top: 20px !important;
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    .invest-grid::-webkit-scrollbar {
+        display: none; /* Chrome, Safari and Opera */
+    }
+    .invest-card {
+        flex: 0 0 85% !important;
+        scroll-snap-align: center !important;
+        margin-bottom: 0 !important;
+        min-height: 200px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
